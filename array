@@ -1,0 +1,106 @@
+// // // array
+// // var family = ['Aaron', 'Sarah', 'Isaiah', 'Jeremiah', 'Maayan'];
+// // // ordered list
+// // // can put anything in the array (func, strings, boolean, numbers, objects)
+
+
+
+
+
+// // // object
+// // var car = {
+// //   color: 'red',
+// //   speed: 'fast',
+// //   wheels: 4,
+// //   drive: function () {
+// //     console.log('vroom!');
+// //   }
+// // }
+
+// var family = ['Jon', 'Vicki', 'Riley', 'Sarah', 'Max'];
+// // console.log(family[0]);
+// // console.log(family[4]);
+// // console.log(family[3]);
+// // console.log(family.length);
+
+// family[5] = 'Olive';
+// //can add another list to the array
+
+// // OR
+
+// family.push('Olive');
+
+
+// //adding example
+
+// var cookieIngredients = ['flour', 'salt', 'butter', 'egg', 'vanilla'];
+// cookieIngredients.push('baking soda');
+// cookieIngredients.push('sugar');
+// cookieIngredients.push('chocolate chips');
+
+// // changing arrays
+// var groceries = ['Romaine Lettuce', 'Bread', 'Eggs', 'Cheese', 'Milk'];
+
+// groceries[0] = 'Kale';
+// groceries[1] = 'Bagels';
+
+// //removing items
+// var groceries = ['Romaine Lettuce', 'Bread', 'Eggs', 'Cheese', 'Milk'];
+
+// // remove from end
+// groceries.pop();
+
+// // remove from front
+// groceries.shift();
+
+// // remove and replace items
+// groceries.splice(2, 1, 'Yogurt', 'Berries');
+
+
+// // You can add functions into arrays to manipluate 
+// var vegtables = ['romaine lettuce', 'tomatoes', 'basil'];
+// // var drinks = ['milk', 'water', 'wine'];
+// // var family = ['Bob', 'Sue', 'Ted'];
+
+// var addItem = function (array) {
+//   array.push('cucumber');
+// };
+
+// addItem(vegtables);
+
+
+
+// // Exercise
+// var cookieIngredients = ['flour', 'salt', 'butter', 'egg', 'vanilla'];
+// cookieIngredients.splice(2, 1, 'lard');
+// console.log(cookieIngredients);
+
+
+// // Nested Array
+// var cookieJar1 = ['cookie 1', 'cookie 2', 'cookie 3', 'cookie 4', 'cookie 5'];
+// var cookieJar2 = ['cookie 1', 'cookie 2', 'cookie 3', 'cookie 4', 'cookie 5'];
+// var cookieJar3 = ['cookie 1', 'cookie 2', 'cookie 3', 'cookie 4', 'cookie 5'];
+
+// var neighbors = [cookieJar1, cookieJar2, cookieJar3];
+
+// console.log(neighbors[1][0]); //output; array 1 cookie 1
+
+//exersise <editing an array>
+
+let secretMessage = ['Learning', 'is', 'not', 'about', 'what', 'you', 'get', 'easily', 'the', 'first', 'time,', 'it', 'is', 'about', 'what', 'you', 'can', 'figure', 'out.', '-2015,', 'Chris', 'Pine,', 'Learn', 'JavaScript'];
+secretMessage.pop();
+// console.log(secretMessage);
+secretMessage.push('to', 'Program');
+// console.log(secretMessage)
+secretMessage.splice(7, 1, 'right');
+// console.log(secretMessage);
+secretMessage.shift();
+// console.log(secretMessage);
+secretMessage.splice(0, 0, 'Programming');
+// console.log(secretMessage);
+secretMessage.splice(6, 5, "know");
+// console.log(secretMessage);
+
+console.log(secretMessage.join( ));
+
+
