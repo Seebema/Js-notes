@@ -1,0 +1,149 @@
+var car = {
+    color: 'red',
+    wheels: 4,
+    }
+  };
+
+car[speed] = 100;
+car[make] = 'Toyota';
+
+console.log(car);
+
+  // console.log(car.color);
+  // console.log(car['color']); // wants the qouts because the property is  technically a string
+
+  // var someProperty = 'color';
+  // console.log(car[someProperty]);
+
+
+  //way to define properties of an object dynamically or using a function
+var someProperty = function (obj, prop, value) {
+  Object[prop] = value;
+};  // this is a function that takes an object, a property and a value and sets the property to the value
+
+
+// This has been the difference between bracket notation and dot notation
+
+
+var myDriveFunction = function () {
+  console.log('vroom');
+}
+var car = {
+    color: 'red',
+    wheels: 4,
+    drive: myDriveFunction,
+  };
+
+car.drive();
+myDriveFunction();
+
+
+
+// PASS BY VALUE VS PASS BY REFERENCE
+
+var x = 10;
+var y = x;
+y = 5;
+
+console.log(x);
+
+
+var array1 = [1, 2, 3];
+var array2 = array1;
+array2.push(4);
+
+console.log(array1);
+// why did this happen? because array2 is a reference to array1.  So when you change array2, you are changing array1.  This is called pass by reference.  If you want to make a copy of an array, you have to use the slice method.
+// Cannot make a copy of an object using push.  You have to use the JSON method.
+
+
+//Nesting objects in objects
+var car = {
+  color: 'red',
+  wheels: 4,
+  drive: function () {
+    console.log('vroom!')
+  },
+  engine: {
+    horsepower: 500,
+    cylinders: 8,
+    liter: 3.8,
+    turbo: {
+      format: 'straight',
+      quanity: 2
+    }
+  }
+}
+
+//Nesting objects in arrays
+
+var mashedPotatoesRecipe = {
+  name: "Mashed Potatoes",
+  serves: 4,
+  ingredients: [
+    {
+      "name": "water"
+    },
+    {
+      "name": "potatoes",
+      "count": 2
+    },
+    {
+      "name": "butter",
+      "count": 2,
+      "unit": "tablespoons"
+    },
+    {
+      "name": "salt",
+      "count": 0.5,
+      "unit": "teaspoons"
+    },
+    {
+      "name": "pepper",
+      "count": 0.25,
+      "unit": "teaspoons"
+    }
+  ],
+  directions: [
+    "Add potatoes to a pot and cover with an inch of water.",
+    "Bring the water to a boil over high heat, then reduce to a simmer and cover.",
+    "Simmer for 20 minutes or until potatoes are fork tender.",
+    "Drain water from potatoes, leaving the potatoes in the original pot.",
+    "Add remaining ingredients to the pot with the potatoes.",
+    "Mash potatoes until they reach the desired consistency.",
+    "Serve immediately, or cover and refrigerate."
+  ]
+}
+mashedPotatoesRecipe.ingredients.forEach(function (ingredientObject) {
+  if (ingredientObject.name === 'butter') {
+    console.log(ingredientObject);
+    ingredientObject.name = 'margarine';
+  }
+}
+//This was a way to change the name of butter to margarine and is way faster that above
+// mashedPotatoesRecipe.ingredients[2].name = 'margarine';
+// console.log(mashedPotatoesRecipe.ingredients[2].name);  //margarine
+
+Looping though objects
+var person = {
+  name: 'Aaron',
+  age: 33,
+  favoriteFood: 'Tacos',
+  favoriteDrink: 'Margarita',
+  car: {
+    make: 'Subaru',
+    model: 'Forester',
+    year: 2005
+  },
+  city: 'Durham',
+  state: 'North Carolina',
+  married: true,
+  kids: 3
+};
+for (const prop in person) {
+  if (typeof person[prop] === 'object') {
+    for (const nestedProp in person[prop]) {
+      console.log(nestedProp + ': ' + person[prop][nestedProp]);
+    }
+  }
+};
